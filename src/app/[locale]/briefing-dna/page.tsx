@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: 'Briefing DNA BND | Seja Bound',
   description: 'Questionário de diagnóstico — Método DNA BND.',
   robots: { index: false, follow: false },
-  icons: { icon: '/brand/logo-bnd.png' },
 };
 
 export default function BriefingDnaPage() {
