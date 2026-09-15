@@ -1,0 +1,3458 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "title": "standard public schema",
+    "version": "14.15"
+  },
+  "host": "qjcbozupwayhlrmkmwph.supabase.co:443",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json",
+    "application/vnd.pgrst.object+json;nulls=stripped",
+    "application/vnd.pgrst.object+json",
+    "text/csv"
+  ],
+  "produces": [
+    "application/json",
+    "application/vnd.pgrst.object+json;nulls=stripped",
+    "application/vnd.pgrst.object+json",
+    "text/csv"
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "produces": [
+          "application/openapi+json",
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "summary": "OpenAPI description (this document)",
+        "tags": [
+          "Introspection"
+        ]
+      }
+    },
+    "/client_users": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.client_users.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.client_users.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.client_users.profile_id"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/client_users"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "client_users"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.client_users"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "client_users"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.client_users.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.client_users.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.client_users.profile_id"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "client_users"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.client_users.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.client_users.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.client_users.profile_id"
+          },
+          {
+            "$ref": "#/parameters/body.client_users"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "client_users"
+        ]
+      }
+    },
+    "/kanban_columns": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.color"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.position"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.is_final"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/kanban_columns"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "kanban_columns"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.kanban_columns"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "kanban_columns"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.color"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.position"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.is_final"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "kanban_columns"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.color"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.position"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.is_final"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.kanban_columns.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.kanban_columns"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "kanban_columns"
+        ]
+      }
+    },
+    "/email_notifications": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.recipient_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.template"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.sent_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.status"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/email_notifications"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "email_notifications"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.email_notifications"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "email_notifications"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.recipient_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.template"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.sent_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.status"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "email_notifications"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.recipient_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.template"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.subject"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.sent_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.email_notifications.status"
+          },
+          {
+            "$ref": "#/parameters/body.email_notifications"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "email_notifications"
+        ]
+      }
+    },
+    "/reports": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.reports.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.period_start"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.period_end"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.data"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/reports"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "reports"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.reports"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "reports"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.reports.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.period_start"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.period_end"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.data"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "reports"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.reports.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.period_start"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.period_end"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.data"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.reports.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.reports"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "reports"
+        ]
+      }
+    },
+    "/profiles": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.profiles.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.full_name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.avatar_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.role"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.preferred_lang"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.theme"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/profiles"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "profiles"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.profiles"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "profiles"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.profiles.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.full_name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.avatar_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.role"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.preferred_lang"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.theme"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "profiles"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.profiles.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.full_name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.avatar_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.role"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.preferred_lang"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.theme"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.profiles.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.profiles"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "profiles"
+        ]
+      }
+    },
+    "/clients": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.clients.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.logo_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.company"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.primary_color"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.contact_email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/clients"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "clients"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.clients"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "clients"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.clients.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.logo_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.company"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.primary_color"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.contact_email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "clients"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.clients.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.logo_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.company"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.primary_color"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.contact_email"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.clients.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.clients"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "clients"
+        ]
+      }
+    },
+    "/task_activity": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.task_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.actor_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.action"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.old_value"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.new_value"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/task_activity"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "task_activity"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.task_activity"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "task_activity"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.task_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.actor_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.action"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.old_value"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.new_value"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "task_activity"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.task_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.actor_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.action"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.old_value"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.new_value"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.task_activity.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.task_activity"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "task_activity"
+        ]
+      }
+    },
+    "/tasks": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.tasks.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.column_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.assignee_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.due_date"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.priority"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.sprint_week"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.updated_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/tasks"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "tasks"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.tasks"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "tasks"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.tasks.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.column_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.assignee_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.due_date"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.priority"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.sprint_week"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.updated_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "tasks"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.tasks.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.column_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.assignee_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.due_date"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.priority"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.sprint_week"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.created_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.tasks.updated_at"
+          },
+          {
+            "$ref": "#/parameters/body.tasks"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "tasks"
+        ]
+      }
+    },
+    "/delivery_files": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.delivery_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.file_name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.file_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.file_size"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.mime_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.uploaded_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/delivery_files"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "delivery_files"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.delivery_files"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "delivery_files"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.delivery_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.file_name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.file_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.file_size"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.mime_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.uploaded_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "delivery_files"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.delivery_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.file_name"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.file_url"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.file_size"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.mime_type"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.uploaded_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.delivery_files.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.delivery_files"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "delivery_files"
+        ]
+      }
+    },
+    "/briefings": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.briefings.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.submitted_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.category"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.attachments"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/briefings"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "briefings"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.briefings"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "briefings"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.briefings.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.submitted_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.category"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.attachments"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "briefings"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.briefings.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.client_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.submitted_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.category"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.attachments"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.briefings.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.briefings"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "briefings"
+        ]
+      }
+    },
+    "/collaborator_clients": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.collaborator_clients.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.collaborator_clients.collaborator_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.collaborator_clients.client_id"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/collaborator_clients"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "collaborator_clients"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.collaborator_clients"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "collaborator_clients"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.collaborator_clients.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.collaborator_clients.collaborator_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.collaborator_clients.client_id"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "collaborator_clients"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.collaborator_clients.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.collaborator_clients.collaborator_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.collaborator_clients.client_id"
+          },
+          {
+            "$ref": "#/parameters/body.collaborator_clients"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "collaborator_clients"
+        ]
+      }
+    },
+    "/deliveries": {
+      "get": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.task_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.client_feedback"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.reviewed_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.reviewed_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.created_at"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/order"
+          },
+          {
+            "$ref": "#/parameters/range"
+          },
+          {
+            "$ref": "#/parameters/rangeUnit"
+          },
+          {
+            "$ref": "#/parameters/offset"
+          },
+          {
+            "$ref": "#/parameters/limit"
+          },
+          {
+            "$ref": "#/parameters/preferCount"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "items": {
+                "$ref": "#/definitions/deliveries"
+              },
+              "type": "array"
+            }
+          },
+          "206": {
+            "description": "Partial Content"
+          }
+        },
+        "tags": [
+          "deliveries"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/body.deliveries"
+          },
+          {
+            "$ref": "#/parameters/select"
+          },
+          {
+            "$ref": "#/parameters/preferPost"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        },
+        "tags": [
+          "deliveries"
+        ]
+      },
+      "delete": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.task_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.client_feedback"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.reviewed_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.reviewed_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.created_at"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "deliveries"
+        ]
+      },
+      "patch": {
+        "parameters": [
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.task_id"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.title"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.description"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.status"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.client_feedback"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.reviewed_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.reviewed_at"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.created_by"
+          },
+          {
+            "$ref": "#/parameters/rowFilter.deliveries.created_at"
+          },
+          {
+            "$ref": "#/parameters/body.deliveries"
+          },
+          {
+            "$ref": "#/parameters/preferReturn"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "tags": [
+          "deliveries"
+        ]
+      }
+    },
+    "/rpc/get_my_role": {
+      "get": {
+        "produces": [
+          "application/json",
+          "application/vnd.pgrst.object+json;nulls=stripped",
+          "application/vnd.pgrst.object+json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "(rpc) get_my_role"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "in": "body",
+            "name": "args",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "$ref": "#/parameters/preferParams"
+          }
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.pgrst.object+json;nulls=stripped",
+          "application/vnd.pgrst.object+json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "(rpc) get_my_role"
+        ]
+      }
+    },
+    "/rpc/is_admin": {
+      "get": {
+        "produces": [
+          "application/json",
+          "application/vnd.pgrst.object+json;nulls=stripped",
+          "application/vnd.pgrst.object+json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "(rpc) is_admin"
+        ]
+      },
+      "post": {
+        "parameters": [
+          {
+            "in": "body",
+            "name": "args",
+            "required": true,
+            "schema": {
+              "type": "object"
+            }
+          },
+          {
+            "$ref": "#/parameters/preferParams"
+          }
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.pgrst.object+json;nulls=stripped",
+          "application/vnd.pgrst.object+json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "(rpc) is_admin"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "client_users": {
+      "required": [
+        "id",
+        "client_id",
+        "profile_id"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "client_id": {
+          "description": "Note:\nThis is a Foreign Key to `clients.id`.<fk table='clients' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "profile_id": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "kanban_columns": {
+      "required": [
+        "id",
+        "name",
+        "position",
+        "is_final",
+        "created_by",
+        "created_at"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "format": "text",
+          "type": "string"
+        },
+        "color": {
+          "format": "text",
+          "type": "string"
+        },
+        "position": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "is_final": {
+          "default": false,
+          "format": "boolean",
+          "type": "boolean"
+        },
+        "created_by": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "email_notifications": {
+      "required": [
+        "id",
+        "recipient_id",
+        "sent_at",
+        "status"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "recipient_id": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "template": {
+          "format": "text",
+          "type": "string"
+        },
+        "subject": {
+          "format": "text",
+          "type": "string"
+        },
+        "sent_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "status": {
+          "default": "sent",
+          "enum": [
+            "sent",
+            "failed"
+          ],
+          "format": "public.email_status",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "reports": {
+      "required": [
+        "id",
+        "client_id",
+        "title",
+        "data",
+        "created_by",
+        "created_at"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "client_id": {
+          "description": "Note:\nThis is a Foreign Key to `clients.id`.<fk table='clients' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "title": {
+          "format": "text",
+          "type": "string"
+        },
+        "period_start": {
+          "format": "date",
+          "type": "string"
+        },
+        "period_end": {
+          "format": "date",
+          "type": "string"
+        },
+        "data": {
+          "format": "jsonb"
+        },
+        "created_by": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "profiles": {
+      "required": [
+        "id",
+        "role",
+        "preferred_lang",
+        "theme",
+        "created_at"
+      ],
+      "properties": {
+        "id": {
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "full_name": {
+          "format": "text",
+          "type": "string"
+        },
+        "avatar_url": {
+          "format": "text",
+          "type": "string"
+        },
+        "role": {
+          "default": "client",
+          "enum": [
+            "admin",
+            "collaborator",
+            "client"
+          ],
+          "format": "public.user_role",
+          "type": "string"
+        },
+        "preferred_lang": {
+          "default": "pt",
+          "format": "text",
+          "type": "string"
+        },
+        "theme": {
+          "default": "dark",
+          "format": "text",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "clients": {
+      "required": [
+        "id",
+        "name",
+        "created_by",
+        "created_at"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "name": {
+          "format": "text",
+          "type": "string"
+        },
+        "logo_url": {
+          "format": "text",
+          "type": "string"
+        },
+        "company": {
+          "format": "text",
+          "type": "string"
+        },
+        "primary_color": {
+          "format": "text",
+          "type": "string"
+        },
+        "contact_email": {
+          "format": "text",
+          "type": "string"
+        },
+        "created_by": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "task_activity": {
+      "required": [
+        "id",
+        "task_id",
+        "actor_id",
+        "action",
+        "created_at"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "task_id": {
+          "description": "Note:\nThis is a Foreign Key to `tasks.id`.<fk table='tasks' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "actor_id": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "action": {
+          "format": "text",
+          "type": "string"
+        },
+        "old_value": {
+          "format": "text",
+          "type": "string"
+        },
+        "new_value": {
+          "format": "text",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "tasks": {
+      "required": [
+        "id",
+        "title",
+        "type",
+        "client_id",
+        "column_id",
+        "priority",
+        "created_by",
+        "created_at",
+        "updated_at"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "title": {
+          "format": "text",
+          "type": "string"
+        },
+        "description": {
+          "format": "text",
+          "type": "string"
+        },
+        "type": {
+          "default": "other",
+          "enum": [
+            "design",
+            "social_media",
+            "traffic",
+            "content",
+            "web",
+            "video",
+            "photo",
+            "report",
+            "other"
+          ],
+          "format": "public.task_type",
+          "type": "string"
+        },
+        "client_id": {
+          "description": "Note:\nThis is a Foreign Key to `clients.id`.<fk table='clients' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "column_id": {
+          "description": "Note:\nThis is a Foreign Key to `kanban_columns.id`.<fk table='kanban_columns' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "assignee_id": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "due_date": {
+          "format": "date",
+          "type": "string"
+        },
+        "priority": {
+          "default": "medium",
+          "enum": [
+            "low",
+            "medium",
+            "high",
+            "urgent"
+          ],
+          "format": "public.task_priority",
+          "type": "string"
+        },
+        "sprint_week": {
+          "format": "text",
+          "type": "string"
+        },
+        "created_by": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "updated_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "delivery_files": {
+      "required": [
+        "id",
+        "delivery_id",
+        "file_name",
+        "file_url",
+        "uploaded_by",
+        "created_at"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "delivery_id": {
+          "description": "Note:\nThis is a Foreign Key to `deliveries.id`.<fk table='deliveries' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "file_name": {
+          "format": "text",
+          "type": "string"
+        },
+        "file_url": {
+          "format": "text",
+          "type": "string"
+        },
+        "file_size": {
+          "format": "int64",
+          "type": "integer"
+        },
+        "mime_type": {
+          "format": "text",
+          "type": "string"
+        },
+        "uploaded_by": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "briefings": {
+      "required": [
+        "id",
+        "client_id",
+        "submitted_by",
+        "title",
+        "description",
+        "attachments",
+        "status",
+        "created_at"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "client_id": {
+          "description": "Note:\nThis is a Foreign Key to `clients.id`.<fk table='clients' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "submitted_by": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "title": {
+          "format": "text",
+          "type": "string"
+        },
+        "description": {
+          "format": "text",
+          "type": "string"
+        },
+        "category": {
+          "format": "text",
+          "type": "string"
+        },
+        "attachments": {
+          "format": "jsonb"
+        },
+        "status": {
+          "default": "open",
+          "enum": [
+            "open",
+            "in_progress",
+            "closed"
+          ],
+          "format": "public.briefing_status",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "collaborator_clients": {
+      "required": [
+        "id",
+        "collaborator_id",
+        "client_id"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "collaborator_id": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "client_id": {
+          "description": "Note:\nThis is a Foreign Key to `clients.id`.<fk table='clients' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "deliveries": {
+      "required": [
+        "id",
+        "task_id",
+        "title",
+        "status",
+        "created_by",
+        "created_at"
+      ],
+      "properties": {
+        "id": {
+          "default": "gen_random_uuid()",
+          "description": "Note:\nThis is a Primary Key.<pk/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "task_id": {
+          "description": "Note:\nThis is a Foreign Key to `tasks.id`.<fk table='tasks' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "title": {
+          "format": "text",
+          "type": "string"
+        },
+        "description": {
+          "format": "text",
+          "type": "string"
+        },
+        "status": {
+          "default": "pending",
+          "enum": [
+            "pending",
+            "approved",
+            "revision_requested"
+          ],
+          "format": "public.delivery_status",
+          "type": "string"
+        },
+        "client_feedback": {
+          "format": "text",
+          "type": "string"
+        },
+        "reviewed_by": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "reviewed_at": {
+          "format": "timestamp with time zone",
+          "type": "string"
+        },
+        "created_by": {
+          "description": "Note:\nThis is a Foreign Key to `profiles.id`.<fk table='profiles' column='id'/>",
+          "format": "uuid",
+          "type": "string"
+        },
+        "created_at": {
+          "default": "now()",
+          "format": "timestamp with time zone",
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "parameters": {
+    "preferParams": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "in": "header",
+      "type": "string"
+    },
+    "preferReturn": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "enum": [
+        "return=representation",
+        "return=minimal",
+        "return=none"
+      ],
+      "in": "header",
+      "type": "string"
+    },
+    "preferCount": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "enum": [
+        "count=none"
+      ],
+      "in": "header",
+      "type": "string"
+    },
+    "preferPost": {
+      "name": "Prefer",
+      "description": "Preference",
+      "required": false,
+      "enum": [
+        "return=representation",
+        "return=minimal",
+        "return=none",
+        "resolution=ignore-duplicates",
+        "resolution=merge-duplicates"
+      ],
+      "in": "header",
+      "type": "string"
+    },
+    "select": {
+      "name": "select",
+      "description": "Filtering Columns",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "on_conflict": {
+      "name": "on_conflict",
+      "description": "On Conflict",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "order": {
+      "name": "order",
+      "description": "Ordering",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "range": {
+      "name": "Range",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "in": "header",
+      "type": "string"
+    },
+    "rangeUnit": {
+      "name": "Range-Unit",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "default": "items",
+      "in": "header",
+      "type": "string"
+    },
+    "offset": {
+      "name": "offset",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "limit": {
+      "name": "limit",
+      "description": "Limiting and Pagination",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.client_users": {
+      "name": "client_users",
+      "description": "client_users",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/client_users"
+      }
+    },
+    "rowFilter.client_users.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.client_users.client_id": {
+      "name": "client_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.client_users.profile_id": {
+      "name": "profile_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.kanban_columns": {
+      "name": "kanban_columns",
+      "description": "kanban_columns",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/kanban_columns"
+      }
+    },
+    "rowFilter.kanban_columns.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.kanban_columns.name": {
+      "name": "name",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.kanban_columns.color": {
+      "name": "color",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.kanban_columns.position": {
+      "name": "position",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.kanban_columns.is_final": {
+      "name": "is_final",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.kanban_columns.created_by": {
+      "name": "created_by",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.kanban_columns.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.email_notifications": {
+      "name": "email_notifications",
+      "description": "email_notifications",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/email_notifications"
+      }
+    },
+    "rowFilter.email_notifications.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.email_notifications.recipient_id": {
+      "name": "recipient_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.email_notifications.template": {
+      "name": "template",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.email_notifications.subject": {
+      "name": "subject",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.email_notifications.sent_at": {
+      "name": "sent_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.email_notifications.status": {
+      "name": "status",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.reports": {
+      "name": "reports",
+      "description": "reports",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/reports"
+      }
+    },
+    "rowFilter.reports.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.reports.client_id": {
+      "name": "client_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.reports.title": {
+      "name": "title",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.reports.period_start": {
+      "name": "period_start",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.reports.period_end": {
+      "name": "period_end",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.reports.data": {
+      "name": "data",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.reports.created_by": {
+      "name": "created_by",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.reports.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.profiles": {
+      "name": "profiles",
+      "description": "profiles",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/profiles"
+      }
+    },
+    "rowFilter.profiles.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.profiles.full_name": {
+      "name": "full_name",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.profiles.avatar_url": {
+      "name": "avatar_url",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.profiles.role": {
+      "name": "role",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.profiles.preferred_lang": {
+      "name": "preferred_lang",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.profiles.theme": {
+      "name": "theme",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.profiles.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.clients": {
+      "name": "clients",
+      "description": "clients",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/clients"
+      }
+    },
+    "rowFilter.clients.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.clients.name": {
+      "name": "name",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.clients.logo_url": {
+      "name": "logo_url",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.clients.company": {
+      "name": "company",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.clients.primary_color": {
+      "name": "primary_color",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.clients.contact_email": {
+      "name": "contact_email",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.clients.created_by": {
+      "name": "created_by",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.clients.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.task_activity": {
+      "name": "task_activity",
+      "description": "task_activity",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/task_activity"
+      }
+    },
+    "rowFilter.task_activity.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.task_activity.task_id": {
+      "name": "task_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.task_activity.actor_id": {
+      "name": "actor_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.task_activity.action": {
+      "name": "action",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.task_activity.old_value": {
+      "name": "old_value",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.task_activity.new_value": {
+      "name": "new_value",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.task_activity.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.tasks": {
+      "name": "tasks",
+      "description": "tasks",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/tasks"
+      }
+    },
+    "rowFilter.tasks.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.title": {
+      "name": "title",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.description": {
+      "name": "description",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.type": {
+      "name": "type",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.client_id": {
+      "name": "client_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.column_id": {
+      "name": "column_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.assignee_id": {
+      "name": "assignee_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.due_date": {
+      "name": "due_date",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.priority": {
+      "name": "priority",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.sprint_week": {
+      "name": "sprint_week",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.created_by": {
+      "name": "created_by",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.tasks.updated_at": {
+      "name": "updated_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.delivery_files": {
+      "name": "delivery_files",
+      "description": "delivery_files",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/delivery_files"
+      }
+    },
+    "rowFilter.delivery_files.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.delivery_files.delivery_id": {
+      "name": "delivery_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.delivery_files.file_name": {
+      "name": "file_name",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.delivery_files.file_url": {
+      "name": "file_url",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.delivery_files.file_size": {
+      "name": "file_size",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.delivery_files.mime_type": {
+      "name": "mime_type",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.delivery_files.uploaded_by": {
+      "name": "uploaded_by",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.delivery_files.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.briefings": {
+      "name": "briefings",
+      "description": "briefings",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/briefings"
+      }
+    },
+    "rowFilter.briefings.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.briefings.client_id": {
+      "name": "client_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.briefings.submitted_by": {
+      "name": "submitted_by",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.briefings.title": {
+      "name": "title",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.briefings.description": {
+      "name": "description",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.briefings.category": {
+      "name": "category",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.briefings.attachments": {
+      "name": "attachments",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.briefings.status": {
+      "name": "status",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.briefings.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.collaborator_clients": {
+      "name": "collaborator_clients",
+      "description": "collaborator_clients",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/collaborator_clients"
+      }
+    },
+    "rowFilter.collaborator_clients.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.collaborator_clients.collaborator_id": {
+      "name": "collaborator_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.collaborator_clients.client_id": {
+      "name": "client_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "body.deliveries": {
+      "name": "deliveries",
+      "description": "deliveries",
+      "required": false,
+      "in": "body",
+      "schema": {
+        "$ref": "#/definitions/deliveries"
+      }
+    },
+    "rowFilter.deliveries.id": {
+      "name": "id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.deliveries.task_id": {
+      "name": "task_id",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.deliveries.title": {
+      "name": "title",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.deliveries.description": {
+      "name": "description",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.deliveries.status": {
+      "name": "status",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.deliveries.client_feedback": {
+      "name": "client_feedback",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.deliveries.reviewed_by": {
+      "name": "reviewed_by",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.deliveries.reviewed_at": {
+      "name": "reviewed_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.deliveries.created_by": {
+      "name": "created_by",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    },
+    "rowFilter.deliveries.created_at": {
+      "name": "created_at",
+      "required": false,
+      "in": "query",
+      "type": "string"
+    }
+  },
+  "externalDocs": {
+    "description": "PostgREST Documentation",
+    "url": "https://postgrest.org/en/v14/references/api.html"
+  }
+}

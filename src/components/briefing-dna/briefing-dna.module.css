@@ -1,0 +1,502 @@
+/* ============================================================
+   BRIEFING DNA BND — estilos isolados desta experiência.
+   Cores, tipografia e proporções seguem o protótipo aprovado
+   (DNA_BND_briefing_prototipo_final.html). Não usa os tokens
+   globais do portal (--brand-primary etc.) de propósito.
+   ============================================================ */
+
+.root {
+  --bnd-green: #323627;
+  --bnd-green-2: #25291f;
+  --bnd-cream: #f4efe6;
+  --bnd-paper: #fbf8f2;
+  --bnd-muted: #77786f;
+  --bnd-line: rgba(50, 54, 39, 0.12);
+  --bnd-shadow: 0 25px 70px rgba(39, 43, 32, 0.18);
+  --bnd-sans: var(--font-briefing-sans), 'Avenir Next', 'Segoe UI', Arial, sans-serif;
+  --bnd-display: 'Georgia', 'Times New Roman', serif;
+
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: radial-gradient(circle at top left, rgba(50, 54, 39, 0.09), transparent 30%), #eee8dd;
+  font-family: var(--bnd-sans);
+  color: #20231c;
+}
+
+.app {
+  width: 100%;
+  max-width: 1180px;
+  min-height: 760px;
+  margin: auto;
+  border-radius: 34px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.03fr 0.97fr;
+  background: rgba(255, 255, 255, 0.65);
+  box-shadow: var(--bnd-shadow);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* ─── Hero / BrandPanel ─── */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: 54px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: var(--bnd-cream);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
+
+.heroBg img {
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(rgba(50, 54, 39, 0.42), rgba(31, 35, 26, 0.72));
+}
+
+.heroRing {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  right: -190px;
+  top: 40px;
+  z-index: -1;
+  animation: float 8s ease-in-out infinite;
+}
+
+.logoWrap {
+  display: flex;
+}
+
+.logoImg {
+  height: 116px;
+  width: auto;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bnd-cream);
+  opacity: 0.75;
+  margin-top: 45px;
+}
+
+.heroTitle {
+  font-size: clamp(40px, 5.4vw, 70px);
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  margin: 18px 0 0;
+  font-weight: 600;
+  font-family: var(--bnd-sans);
+  /* Necessário explicitamente: globals.css define `color` para todo h1-h6
+     do portal, o que sobrescreveria a cor herdada do .hero (cream). */
+  color: var(--bnd-cream);
+}
+
+.heroTitle em {
+  font-family: var(--bnd-display);
+  font-weight: 400;
+  font-style: italic;
+  color: inherit;
+}
+
+/* ─── Panel / form ─── */
+.panel {
+  padding: 34px;
+  background: rgba(251, 248, 242, 0.88);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.top {
+  padding: 6px 4px 26px;
+}
+
+.topRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.kicker {
+  font-size: 12px;
+  color: var(--bnd-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.counter {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--bnd-green);
+}
+
+.progressTrack {
+  height: 7px;
+  background: rgba(50, 54, 39, 0.08);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--bnd-green);
+  border-radius: 99px;
+  transition: width 0.35s ease;
+}
+
+.stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.stageInner {
+  width: 100%;
+}
+
+.stepWrap {
+  width: 100%;
+}
+
+.stepEnter {
+  animation: stepIn 0.38s ease both;
+}
+
+.stepLabel {
+  display: block;
+  color: var(--bnd-green);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.questionTitle {
+  font-family: var(--bnd-sans);
+  font-size: clamp(26px, 3.4vw, 42px);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin: 0 0 22px;
+  font-weight: 600;
+  color: #1c1f16;
+  outline: none;
+}
+
+.textarea {
+  width: 100%;
+  min-height: 150px;
+  border: 1px solid var(--bnd-line);
+  background: rgba(255, 255, 255, 0.74);
+  border-radius: 18px;
+  padding: 16px 17px;
+  font: inherit;
+  color: #20231c;
+  resize: vertical;
+  box-shadow: 0 4px 18px rgba(50, 54, 39, 0.03);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.textarea::placeholder {
+  color: var(--bnd-muted);
+}
+
+.textarea:focus-visible,
+.textInput:focus-visible {
+  outline: none;
+  border-color: var(--bnd-green);
+  box-shadow: 0 0 0 3px rgba(50, 54, 39, 0.14);
+}
+
+.dualGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.fieldLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--bnd-muted);
+}
+
+.textInput {
+  width: 100%;
+  border: 1px solid var(--bnd-line);
+  background: rgba(255, 255, 255, 0.74);
+  border-radius: 18px;
+  padding: 16px 17px;
+  font: inherit;
+  color: #20231c;
+  box-shadow: 0 4px 18px rgba(50, 54, 39, 0.03);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.textInput::placeholder {
+  color: var(--bnd-muted);
+}
+
+.fieldError {
+  font-size: 12.5px;
+  color: #a4402c;
+  margin-top: 2px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-top: 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 16px;
+  padding: 15px 20px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btnBack {
+  background: transparent;
+  color: var(--bnd-muted);
+  padding-left: 4px;
+}
+
+.btnBack:hover:not(:disabled) {
+  color: var(--bnd-green);
+}
+
+.btnNext {
+  background: var(--bnd-green);
+  color: var(--bnd-cream);
+  min-width: 142px;
+  box-shadow: 0 12px 25px rgba(50, 54, 39, 0.18);
+}
+
+.btnNext:hover:not(:disabled) {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.navRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.submitError {
+  font-size: 12.5px;
+  color: #a4402c;
+  text-align: right;
+}
+
+/* ─── Completion ─── */
+.done {
+  text-align: center;
+}
+
+.checkIcon {
+  width: 104px;
+  height: 104px;
+  border-radius: 28px;
+  background: var(--bnd-green);
+  color: var(--bnd-cream);
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  margin: 0 auto 20px;
+}
+
+.checkLogo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.doneLabel {
+  display: block;
+  color: var(--bnd-green);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.doneTitle {
+  font-family: var(--bnd-sans);
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0 0 16px;
+  color: #1c1f16;
+}
+
+.doneText {
+  color: var(--bnd-muted);
+  line-height: 1.7;
+  margin: 0 0 8px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── Motion ─── */
+@keyframes stepIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes float {
+  50% {
+    transform: translateY(18px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stepEnter {
+    animation: none;
+  }
+  .heroRing {
+    animation: none;
+  }
+  .progressFill,
+  .textarea,
+  .textInput,
+  .btn {
+    transition: none;
+  }
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .hero,
+  .panel {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 880px) {
+  .root {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .app {
+    grid-template-columns: 1fr;
+    max-width: none;
+    min-height: 100vh;
+    border-radius: 0;
+    border: none;
+  }
+
+  .hero {
+    padding: 28px 24px 34px;
+    min-height: 0;
+  }
+
+  .heroRing {
+    display: none;
+  }
+
+  .logoImg {
+    height: 88px;
+  }
+
+  .eyebrow {
+    margin-top: 22px;
+  }
+
+  .heroTitle {
+    font-size: clamp(34px, 9vw, 46px);
+  }
+
+  .panel {
+    padding: 28px 22px 32px;
+  }
+
+  .dualGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .questionTitle {
+    font-size: clamp(24px, 6.4vw, 30px);
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    padding: 24px 18px 28px;
+  }
+
+  .panel {
+    padding: 24px 16px 28px;
+  }
+
+  .textarea {
+    min-height: 128px;
+  }
+
+  .btn {
+    padding: 14px 16px;
+  }
+
+  .btnNext {
+    min-width: 0;
+    flex: 1;
+  }
+}
