@@ -303,6 +303,67 @@ export function renderNewBriefingEmail(params: {
   `;
 }
 
+export function renderDnaBriefingEmail(params: {
+  problemaReal: string;
+  clientesAtuais: string;
+  objecaoVenda: string;
+  ticketMedio: string;
+  metaFaturamento: string;
+  concorrentes: string;
+  diferencial: string;
+  founderStory: string;
+  marketingAnterior: string;
+  submittedAt: string;
+}): string {
+  const field = (label: string, value: string) => `
+      <p style="margin: 0 0 6px; font-size: 12px; color: #B89E85; text-transform: uppercase; letter-spacing: 0.4px;">${label}</p>
+      <div style="margin: 0 0 18px; font-size: 14px; line-height: 1.6; color: #E8DED0; white-space: pre-wrap;">${value}</div>
+  `;
+
+  return `
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Novo Briefing DNA BND</title></head>
+<body style="background-color: #1A0F08; margin: 0; padding: 24px 0; ${BASE_STYLES}">
+  <div style="${CONTAINER_STYLE}">
+    <div style="${HEADER_STYLE}">
+      <div style="${LOGO_TEXT}">Bound <em style="color: #A87653;">Marketing</em></div>
+    </div>
+
+    <div style="text-align: center;">
+      <span style="${BADGE_STYLE} background-color: rgba(168, 118, 83, 0.18); color: #A87653; border: 1px solid rgba(168, 118, 83, 0.35);">
+        DNA BND
+      </span>
+      <h1 style="color: #F5F1EA; font-size: 22px; font-weight: 700; margin: 8px 0 6px;">
+        Novo Briefing Recebido
+      </h1>
+      <p style="color: #D4C9B8; font-size: 13px; margin: 0 0 20px;">
+        Enviado em ${new Date(params.submittedAt).toLocaleString('pt-BR', { dateStyle: 'long', timeStyle: 'short' })}
+      </p>
+    </div>
+
+    <div style="${CARD_BOX}">
+      ${field('Qual problema real você resolve? Para quem?', params.problemaReal)}
+      ${field('Quem compra hoje?', params.clientesAtuais)}
+      ${field('Qual é a objeção mais comum na hora da venda?', params.objecaoVenda)}
+      ${field('Ticket médio', params.ticketMedio)}
+      ${field('Meta de faturamento', params.metaFaturamento)}
+      ${field('Principais concorrentes', params.concorrentes)}
+      ${field('Diferencial', params.diferencial)}
+      ${field('Founder story', params.founderStory)}
+      ${field('O que já tentou em marketing e não funcionou', params.marketingAnterior)}
+    </div>
+
+    <div style="${FOOTER_STYLE}">
+      <p style="margin: 0 0 4px;">Bound Marketing • Briefing DNA BND</p>
+      <p style="margin: 0;">Notificação automática — nenhuma resposta é necessária aqui.</p>
+    </div>
+  </div>
+</body>
+</html>
+  `;
+}
+
 export function renderCollaboratorInviteEmail(params: {
   collaboratorName: string;
   role: string;
